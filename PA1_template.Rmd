@@ -1,11 +1,12 @@
 ---
 title: 'Reproducible Research: Peer Assessment 1'
 output:
-  pdf_document: default
   html_document:
     keep_md: yes
+  pdf_document: default
 ---
 
+All plots for this submission are in folder figure
 
 ## Loading and preprocessing the data
 ```{r}
@@ -38,6 +39,7 @@ hist(number.of.steps$total
 Median is equal to 17065
 Mean is equal to 17066.19
 
+  <img src="./figure/Rplot01.png" height="400px" width="300px" />
 ## What is the average daily activity pattern?
 
 ```{r}
@@ -49,7 +51,8 @@ plot(names(mean.steps), mean.steps, type="l"
 max(as.numeric(mean.steps))
 max.steps.index <- which(mean.steps == max(as.numeric(mean.steps)))
 ```
-Maximal value is equal to 206.1798 and is obtained for 835 interval.
+  <img src="./figure/Rplot02.png" height="400px" width="300px" />
+Maximal value is equal to 206.1798 and is obtained for 835 interval. 
 
 ## Imputing missing values
 ```{r}
@@ -82,7 +85,7 @@ hist(number.of.steps.new$total
      , xlab = "Total number of steps"
      , main = "Histogram of number of total steps taken each day for filled data")
 ```
-
+  <img src="./figure/Rplot03.png" height="400px" width="300px" />
 This time mean and median is equal to each other 10766.19
 
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -118,3 +121,5 @@ library(lattice)
 xyplot(means ~ time | day_type, type = "l", data = data.paterns, layout = c(1, 2) 
        , xlab = "Hour", ylab = "Average number of steps taken")
 ```
+
+  <img src="./figure/Rplot04.png" height="400px" width="300px" />
