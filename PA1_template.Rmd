@@ -35,6 +35,8 @@ hist(number.of.steps$total
      , xlab = "Total number of steps"
      , main = "Histogram of number of total steps taken each day")
 ```
+Median is equal to 17065
+Mean is equal to 17066.19
 
 ## What is the average daily activity pattern?
 
@@ -47,6 +49,7 @@ plot(names(mean.steps), mean.steps, type="l"
 max(as.numeric(mean.steps))
 max.steps.index <- which(mean.steps == max(as.numeric(mean.steps)))
 ```
+Maximal value is equal to 206.1798 and is obtained for 835 interval.
 
 ## Imputing missing values
 ```{r}
@@ -79,6 +82,8 @@ hist(number.of.steps.new$total
      , xlab = "Total number of steps"
      , main = "Histogram of number of total steps taken each day for filled data")
 ```
+
+This time mean and median is equal to each other 10766.19
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
